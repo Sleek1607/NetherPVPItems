@@ -20,6 +20,7 @@ public class NetherPVP extends JavaPlugin
 		this.logger.info(pdfFile.getName() + " Version " + pdfFile.getVersion() +  " Has Been Successfully Enabled!");
 		PluginManager pm =getServer().getPluginManager();
 		pm.registerEvents(this.bl, this);
+		pm.registerEvents(this.pl, this);
 	}
 	public void onDisable()
 	{

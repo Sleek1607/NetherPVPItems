@@ -62,6 +62,7 @@ public class BlockListener implements Listener
 	
 	public static Material[] slowblock = {Material.WEB};
 	public static Material[] lavablock = {Material.REDSTONE_WIRE};
+	public static Material[] explodeblock = {Material.LOCKED_CHEST};
 	
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event)
@@ -91,6 +92,17 @@ public class BlockListener implements Listener
 				{
 					targetBlock.getLocation();
 					this.generateLavaCube(point, lavalength);
+				}
+			}
+		}
+		if(player.hasPermission("NetherPVP.explode"))
+		{
+			for (Material explode : explodeblock) 
+			{
+				if (explode == block) 
+				{
+					event.getBlock().setType(Material.TNT);
+					event.getBlockAgainst().setType(Material.FIRE);			
 				}
 			}
 		}

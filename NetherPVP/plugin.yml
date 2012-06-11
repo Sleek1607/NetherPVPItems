@@ -4,3 +4,6 @@ description: PVP Plugin for EcoCityCraft's Nether
 author: JamieSinn
 main: me.JamieSinn.Bukkit.NetherPVP
 database: false
+commands:
+  strike:
+    description: Shocks the location/player targeted
