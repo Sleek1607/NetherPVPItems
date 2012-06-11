@@ -5,8 +5,9 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 
-public class Explosion
+public class Explosion implements Listener
 {
 	@EventHandler
 	public void ExplodeThrow(Snowball evt)

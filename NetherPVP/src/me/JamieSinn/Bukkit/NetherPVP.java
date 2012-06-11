@@ -19,6 +19,9 @@ public class NetherPVP extends JavaPlugin
 	
 	public final BlockListener bl = new BlockListener();
 	public final PlayerListener pl = new PlayerListener();
+	public final Lava lava = new Lava();
+	public final Slow slow = new Slow();
+	public final Explosion explosion = new Explosion();
 	
 	public void onEnable()
 	{
@@ -26,6 +29,9 @@ public class NetherPVP extends JavaPlugin
 		PluginManager pm =getServer().getPluginManager();
 		pm.registerEvents(this.bl, this);
 		pm.registerEvents(this.pl, this);
+		pm.registerEvents(this.lava, this);
+		pm.registerEvents(this.slow, this);
+		pm.registerEvents(this.explosion, this);
 	}
 	public void onDisable()
 	{

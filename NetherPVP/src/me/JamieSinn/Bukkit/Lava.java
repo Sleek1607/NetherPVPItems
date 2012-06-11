@@ -6,8 +6,9 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.SmallFireball;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 
-public class Lava
+public class Lava implements Listener
 {
 
 
