@@ -12,7 +12,7 @@ public class NetherPVP extends JavaPlugin
 	public static NetherPVP Plugin;
 	
 	public final BlockListener bl = new BlockListener();
-
+	public final PlayerListener pl = new PlayerListener();
 	
 	public void onEnable()
 	{
