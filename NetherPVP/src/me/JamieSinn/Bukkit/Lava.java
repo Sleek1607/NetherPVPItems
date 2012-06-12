@@ -36,15 +36,15 @@ public class Lava implements Listener
 		}
 	}
 	@EventHandler
-	public void LavaThrow(SmallFireball evt)
+	public void LavaThrow(SmallFireball event)
 	{
 	  
-    	Player player = (Player) evt.getShooter();
+    	Player player = (Player) event.getShooter();
   
     	if(player.hasPermission("NetherPVP.throw.lava"))
     	{
     		int lavalength = 5;
-    		Location point = evt.getLocation();
+    		Location point = event.getLocation();
     		this.generateLavaCube(point, lavalength);
     	}
     

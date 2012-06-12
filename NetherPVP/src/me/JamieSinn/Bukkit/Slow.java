@@ -36,21 +36,22 @@ public class Slow implements Listener
 	}
 	@SuppressWarnings("unused")
 	@EventHandler
-	public void SlowThrow(PlayerEggThrowEvent evt)
+	public void SlowThrow(PlayerEggThrowEvent event)
 	{
-	   	Egg egg = evt.getEgg();
+	   	Egg egg = event.getEgg();
     	Location loc = egg.getLocation();
-    	Player player = evt.getPlayer();
+    	Player player = event.getPlayer();
     	World world = loc.getWorld();
     	
     	
     		if(player.hasPermission("NetherPVP.throw.slow"))
     		{
     			int slowlength = 5;
-    			Location point = evt.getEgg().getLocation();
+    			Location point = event.getEgg().getLocation();
     			this.generateSlowCube(point, slowlength);
     		}
     	
     	
 	}
+	
 }

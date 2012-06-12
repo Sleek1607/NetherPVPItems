@@ -18,7 +18,7 @@ public class NetherPVP extends JavaPlugin
 	public static NetherPVP Plugin;
 	
 	public final BlockListener bl = new BlockListener();
-	public final PlayerListener pl = new PlayerListener();
+	public final PlayerListener pl = new PlayerListener(this);
 	public final Lava lava = new Lava();
 	public final Slow slow = new Slow();
 	public final Explosion explosion = new Explosion();

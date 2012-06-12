@@ -27,7 +27,7 @@ public class BlockListener implements Listener
 		Player player = event.getPlayer();
 		Block targetBlock = player.getTargetBlock(null, 50);
 		Location point = targetBlock.getLocation();
-		if(player.hasPermission("NetherPVP.slow"))
+		if(player.hasPermission("NetherPVP.place.slow"))
 		{
 			for (Material slow : slowblock) 
 			{
@@ -38,7 +38,7 @@ public class BlockListener implements Listener
 				}
 			}
 		}
-		if(player.hasPermission("NetherPVP.lava"))
+		if(player.hasPermission("NetherPVP.place.lava"))
 		{
 			for (Material lava : lavablock) 
 			{
@@ -49,7 +49,7 @@ public class BlockListener implements Listener
 				}
 			}
 		}
-		if(player.hasPermission("NetherPVP.explode"))
+		if(player.hasPermission("NetherPVP.place.explode"))
 		{
 			for (Material explode : explodeblock) 
 			{

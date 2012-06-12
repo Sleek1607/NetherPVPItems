@@ -11,6 +11,7 @@ import org.bukkit.entity.Egg;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.SmallFireball;
 import org.bukkit.entity.Snowball;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -25,22 +26,32 @@ public class PlayerListener implements Listener
 	Slow slow;
 	Lava lava;
 	Explosion explosion;
+
 	
+
+	public PlayerListener(NetherPVP plugin)
+	{
+		this.plugin = plugin;
+		slow = new Slow();
+		lava = new Lava();
+		explosion = new Explosion();
+	}
 	@EventHandler
 	public void InteractWithItems(PlayerInteractEvent event)
 	{
 		Player player = event.getPlayer();
-		if(player.getItemInHand().getType() == Material.EGG && event.getAction() == Action.RIGHT_CLICK_AIR)
+		if(player.getItemInHand().getType() == Material.WEB && event.getAction() == Action.LEFT_CLICK_AIR)
 		{
-			slow.SlowThrow(null);
+			slow.SlowThrow(slow);
 		}
-		if(player.getItemInHand().getType() == Material.FIREBALL && event.getAction() == Action.RIGHT_CLICK_AIR)
+		if(player.getItemInHand().getType() == Material.REDSTONE_WIRE && event.getAction() == Action.LEFT_CLICK_AIR)
 		{
-			lava.LavaThrow(null);
+		
+			lava.LavaThrow(lava);
 		}
-		if(player.getItemInHand().getType() == Material.SNOW_BALL && event.getAction() == Action.RIGHT_CLICK_AIR)
+		if(player.getItemInHand().getType() == Material.LOCKED_CHEST && event.getAction() == Action.LEFT_CLICK_AIR)
 		{
-			explosion.ExplodeThrow(null);
+			explosion.ExplodeThrow(explosion);
 		}
 	}
 	

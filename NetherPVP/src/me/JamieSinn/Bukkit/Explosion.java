@@ -10,16 +10,15 @@ import org.bukkit.event.Listener;
 public class Explosion implements Listener
 {
 	@EventHandler
-	public void ExplodeThrow(Snowball evt)
+	public void ExplodeThrow(Snowball event)
 	{
 	  
-    	Player player = (Player) evt.getShooter();
+    	Player player = (Player) event.getShooter();
     
     	if(player.hasPermission("NetherPVP.throw.explode"))
     	{
-    		
-    		Location location = evt.getLocation();
-    		World world = evt.getWorld();
+       		Location location = event.getLocation();
+    		World world = event.getWorld();
     		world.createExplosion(location, 7);
     	}
     	
